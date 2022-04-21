@@ -7,7 +7,7 @@ export default class UserAvatarController {
 
     const user = updateAvatar.execute({
       user_id: request.user.id,
-      avatarFilename: request.file.filename,
+      avatarFilename: String(request.file?.filename),
     });
 
     return response.json(user);
